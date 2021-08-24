@@ -1,0 +1,124 @@
+
+PATH+=":$HOME/go/bin"
+alias cat='ccat' 
+
+#*******************************************************************#
+# The next alias are to set beatiful color schemes with ccat(https://github.com/jingweno/ccat), 
+# ccat is a like cat binary(program, tool), but with color yeah syntax highlighting, this is a tremendous tool and 
+# one of favorites, due it's very useful, making more easy the read of stdout(standard output, lol with less technical 
+# words the output of commands, you need to use a pipe |, and don't use this with commands that are interactive, example of use
+# $ env|ccat ), also you can read code archives with syntax highlight in you terminal this is so much cool than 
+# in monochromatic, once time I saw to someone saying that the terminals don't must have colors also the prompts,
+# for me this is very wrong because is more hard of read all, also we need to take aproach of the technology, and if 
+# right now we have monitors with color, we need to take aproach of that, to make our work more easy and eficient, you know
+# the tech improve us like a kind of ciborg lol
+#*******************************************************************#
+
+alias ccatnight='ccat -G String=darkgray -G Keyword=turquoise -G Comment=bold -G Type=green -G Plaintext=blue -G Punctuation=fuchsia -G Decimal=bold -G Tag=turquoise -G Literal=darkred'
+
+
+alias ccatdark='ccat -G Keyword=fuscia -G Type=blue -G Literal=green -G Keyword=darkgreen -G Plaintext=bold -G Punctuation=darkred -G Decimal=darkgray  -G String=red -G Tag=yellow'
+
+
+alias ccatfancy='ccat -G Comment=fuscia -G Keyword=*darkgreen* -G Plaintext=blue -G Punctuation=darkgreen -G Decimal=_white_ -G String=black -G Tag=yellow -G Type=darkblue -G Literal=*fuscia*'
+
+
+alias ccatmem='ccat -G String=_red_ -G Keyword=_yellow_ -G Comment=purple -G Type=blue -G Plaintext=lightgray -G Punctuation=bold -G Decimal=_darkteal_ -G Tag=darkgray -G Literal=_teal_'
+
+
+alias ccatmev='ccat -G String=_yellow_ -G Keyword=_red_ -G Comment=purple -G Type=blue -G Plaintext=lightgray -G Punctuation=bold -G Decimal=_darkteal_ -G Tag=darkgray -G Literal=_teal_'
+
+
+#*******************************************************************#
+# Alias for testing, without hints, here goes alias for commands that 
+# (important commands to manage the system) I think that could be useful
+# but due to my limited time I can't put hints, but it will have, someday
+#*******************************************************************#
+
+# alias impmnt='findmnt|ccatdark'
+# alias lsusb='lsusb|ccatmev'
+# alias env='env|ccatnight'
+
+
+#*******************************************************************#
+# Ok in this alias I only add the arguments for that the output of diff prints the 
+# compariton of the two archives and tells you if both are equals or not, and add 
+# the support for colorized output 
+#*******************************************************************#
+
+alias diff='diff --color=always'
+
+
+#*******************************************************************#
+# Ok the next alias just set by default the colorized for the output dmesg (you 
+# need read the man page) also you should see the command journalctl 
+#*******************************************************************#
+
+alias dmesg='dmesg --color=always'
+
+#*******************************************************************#
+# This command help to enable and add a big palette of colors for you term it is 
+# very cool you should test it, here is the github repo:
+#      https://github.com/trapd00r/LS_COLORS 
+# also I have to say that the eval command is dangerous you must to try
+# use it with a lot of care in scripts (see help eval and tldr eval)because all is take
+# literally, to my way of think it could be use by an attacker to hide the execution
+# and execute commands in many ways, like putting the commands to execute in a variable
+# downloading the oneliner or commands to execute from internet with a wget using var sustitution, 
+# this practily is execution in memory, so due this you must have special care using it 
+# in scripts, so due that you must have a policy of permises of execution of scripts or archives very 
+# strict that only you like creator of archive can only write or execute, try the less execute sudo for scripts,
+# or programs if you can't read or understand the code,for your group also nothing at least that you have
+# more users in your group, and the permisses could be read or execution but no both at least that it be necessary
+# and for others nothing, don't write permisses this is basic, don't read, don't execution
+# a least that it be necesary, so many times a program need to read archives or execute
+# so try that only can be one of both to make more hard that these file or script could be use
+# to make disaters,but relax GnuLinux already have pre configured the permises and files
+# that could be use for every program in the system, so if you install from the repositories of your distro
+# you shouldn't worry, also in this .bashrc you have the umask(see man unmask) configured to 
+# subtract permissions of files that you create (umask 027, but it could be 057 or 077, umask use the octal form to set 
+# the subtract) so this is more for customs programs, files, or script
+# but this this could be super fluo, because if already someones is in your system, early o late he or she, 
+# gonna pass all this, so the best is take prevention
+# to avoid in first place that someone compromise your system, 
+#*******************************************************************#
+
+eval $(dircolors -b $HOME/LS_COLORS)
+
+#*******************************************************************#
+# The job of the next command instruction is print the document (obviusly) every 
+# time that you open your shell, here the interesting is the content and function 
+# of the archive printed, in my case this document have a list made by me with 
+# commands with a short explanation of its function this with my own words (or the 
+# way how I understand how it works) to make it more familiar and understandable, 
+# all this commands are all that I think that are the basic/standard to manipulate 
+# your shell and Gnu/Linux, is obvius that these commands you must learn by heart 
+# (memorize), and the aim of all this, is see your list of commands many, many, 
+# many, many, many, many lot of times to make more easy of learn it and always have 
+# present in your mind all the gamma of commands, and not only that, you must study 
+# this list every day and not only see it (This gonna make you a best 
+# coder/SysAdmin/Hacker/Human/Deportist/Swimmer/Father/Mother/Son/Cousin of a 
+# friend/Porn actor/Worker/Reptilian/etc/etc) and challenge yourself (I do this 
+# almost all the days,) to see how many commands you have memorized and always try 
+# to learn the next, by the way this helped me a lot in a beggining when I don't 
+# knew almost anything of it, and it still helping me, because this list always is 
+# grow, I will gonna share you my custom list in a future, but due a some issues it 
+# looks very dirty, and I want lustrate it more, because it needs to be easy of 
+# understand, for the moment you should start to making the yours, with the 
+# commands that you think that you need to learn by heart (Can be of any type o 
+# function, in my case it was commands to manipale the system), lol Ok I gonna 
+# upload my custom command list in raw to give you an idea that how it is and you 
+# can start to make yours, but I warn you that it is all in Spanish, and the 
+# explanation of the function of each command is how I understand what its function 
+# is, so here is the url of the file, or you can find the in this repository, in 
+# fact the url is the url of the same archive of this repository lol...
+#
+# Url of archive comandos.txt:
+#                   
+#                      
+#https://github.com/TitanHero/simplebashrc/blob/master/comandos.txt 
+#*******************************************************************#
+
+alias oneliner='ccatnight $HOME/.simpleBashrcData/OneLiners.md'
+
+
